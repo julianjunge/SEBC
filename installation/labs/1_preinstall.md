@@ -62,3 +62,67 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 ## NTPD service
 1. `ps -aux | grep ntpd`
     `centos    5908  0.0  0.0 112708   976 pts/0    S+   11:58   0:00 grep --color=auto ntpd`
+
+## Install MySQL
+
+1. Installation:
+`wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm`
+`sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm`
+`yum update`
+
+`sudo yum install mysql-server`
+`sudo systemctl start mysqld`
+
+3. Configuration & Security:
+`sudo mysql_secure_installation`
+
+!! allow root from external sources
+
+## Prepare the DBs
+
+https://www.cloudera.com/documentation/enterprise/latest/topics/cm_ig_mysql.html#cmig_topic_5_5
+
+
+## Change FQDN of local machine
+```/etc/sysconfig/network``` and add ```HOSTNAME=use FQDN provided by AWS for simplicity```
+
+## (Optional)
+### change hostname of every machine as follows:
+```sudo hostnamectl set-hostname <city>.europe.internal```
+
+
+#Install Java (all nodes)
+
+## Prepare the repo & install wget
+```sudo yum install wget```
+
+### Import the repo
+```sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo -P /etc/yum.repos.d/```
+
+### get the key
+```sudo rpm --import https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera```
+
+### update
+```sudo yum update```
+
+#Install the JDK
+```sudo yum install oracle.j2sdk1.7```
+
+## verify XOR set the PATH
+```sudo vi  ~/.bashrc```
+
+and add
+```export JAVA_HOME=/usr/java/jdk1.8.0_141-cloudera```
+
+# install JDBC Connector
+```sudo yum install mysql-connector-java```
+
+## Run the installation (master node only)
+`sudo yum install cloudera-manager-daemons cloudera-manager-server`
+
+## Run on all the other Agents (optional, can be run from within CMC)
+!! Doublecheck if SELinux is disabled!! Otherwise /var/lib/ will contain many folders with wrong permissions.
+
+```sudo yum install cloudera-manager-daemons cloudera-manager-agent`
+
+
