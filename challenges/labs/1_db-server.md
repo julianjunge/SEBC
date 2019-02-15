@@ -12,7 +12,7 @@ MariaDB [(none)]> `select @@hostaname`
 ```
 
 # Version
-MariaDB [(none)]> `SELECT VERSION();
+MariaDB [(none)]> `SELECT VERSION();`
 
 ```
 +----------------+

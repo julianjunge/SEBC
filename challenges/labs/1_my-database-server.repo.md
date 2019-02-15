@@ -1,4 +1,4 @@
-#Repo config
+# Repo config
 
 ```
 [mariadb]
