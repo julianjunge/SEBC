@@ -256,3 +256,10 @@ drwxr-xr-x   - rocky  colorado          0 2019-02-15 10:52 /user/rocky
   } ]
 }
 ```
+
+# HUE
+After my cluster came up with issues, I was not able to deploy the test data from HUE into HIVE. Around 1300 the HIVE2 server reported health issues again.
+
+```
+Could not install table: Error creating table sample_07: Could not connect to ip-10-0-0-193.ec2.internal:10000 (code THRIFTTRANSPORT): TTransportException('Could not connect to ip-10-0-0-193.ec2.internal:10000',).
+```

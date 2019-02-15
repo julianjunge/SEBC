@@ -5,6 +5,36 @@
 1. `sudo vi /etc/sysctl.conf`
 2. add line `vm.swappiness = 1`
 
+## Disable SeLinux
+
+`vi /etc/selinux/config`
+
+## Disable hugepage support
+1. `sudo vi /etc/default/grub`
+2. add/append `transparent_hugepage=never` to the line *GRUB_CMDLINE_Linux*
+3. reboot machine
+
+## Copy /etc/hosts to all nodes
+```
+127.0.0.1       localhost localhost.localdomain localhost4 localhost4.localdomain4
+127.0.0.1       localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.0.0.136      ip-10-0-0-136.ec2.internal
+10.0.0.124      ip-10-0-0-124.ec2.internal
+10.0.0.128      ip-10-0-0-128.ec2.internal
+10.0.0.72       ip-10-0-0-72.ec2.internal
+10.0.0.39       ip-10-0-0-39.ec2.internal
+``` 
+
+## add user + group
+`adduser julianjunge`
+
+## create group
+`sudo groupadd superuser`
+
+## add user
+`usermod -a -G wheel julianjunge`
+`usermod -a -G superuser julianjunge`
+
 ## show mount attributes
 
 1. `cat /proc/mounts`
@@ -12,11 +42,6 @@
 ## List reserve spacing 
 
 1. `df -h / | grep dev | cut -f 3,6 -d\  | awk '{print ($1*.05)+$2}'`
-
-## Disable hugepage support
-1. `sudo vi /etc/default/grub`
-2. add/append `transparent_hugepage=never` to the line *GRUB_CMDLINE_Linux*
-3. reboot machine
 
 ## List Network configuration
 1. ifconfig
