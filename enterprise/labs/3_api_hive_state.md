@@ -1,4 +1,5 @@
-#HIVE Status
+
+# HIVE Status
 
 `curl -u julianjunge:cloudera '10.0.0.136:7180/api/v12/clusters/julianjunge/services/hive/'`
 
@@ -79,7 +80,7 @@
   "entityStatus" : "STOPPED"
   ```
 
-#Starting Service
+# Starting Service
 
 `curl -XPOST -u julianjunge:cloudera '10.0.0.136:7180/api/v12/clusters/julianjunge/services/hive/commands/start'`
 
