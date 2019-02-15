@@ -1,4 +1,4 @@
-#Setup
+# Setup
 
 ## Cloud Provide
 * AWS  NA
@@ -73,42 +73,42 @@ repolist: 11,450
 
 # List users & groups
 
-``
+```
 $cat /etc/passwd | grep rocky
 
 rocky:x:3800:3800::/home/rocky:/bin/bash
-``
+```
 
-``
+```
 $cat /etc/passwd | grep denali
 
 denali:x:3900:3900::/home/denali:/bin/bash
-``
+```
 
-``
+```
 $cat /etc/group | grep denali
 
 denali:x:3900:
 alaska:x:3901:denali
-``
+```
 
-``
+```
 $cat /etc/group | grep rocky
 
 rocky:x:3800:
 colorado:x:3902:rocky
 
-``
+```
 
-``
+```
 $getent group alaska
 
 alaska:x:3901:denali
-``
+```
 
-``
+```
 $getent passwd rocky
 
 rocky:x:3800:3800::/home/rocky:/bin/bash
 
-``
+```
