@@ -18,11 +18,11 @@
 ```
 127.0.0.1       localhost localhost.localdomain localhost4 localhost4.localdomain4
 127.0.0.1       localhost localhost.localdomain localhost6 localhost6.localdomain6
-10.0.0.136      ip-10-0-0-136.ec2.internal
-10.0.0.124      ip-10-0-0-124.ec2.internal
-10.0.0.128      ip-10-0-0-128.ec2.internal
-10.0.0.72       ip-10-0-0-72.ec2.internal
-10.0.0.39       ip-10-0-0-39.ec2.internal
+10.0.0.32      ip-10-0-0-32.ec2.internal
+10.0.0.30      ip-10-0-0-30.ec2.internal
+10.0.0.27      ip-10-0-0-27.ec2.internal
+10.0.0.247       ip-10-0-0-247.ec2.internal
+10.0.0.193       ip-10-0-0-193.ec2.internal
 ``` 
 
 ## add user + group
@@ -32,8 +32,8 @@
 `sudo groupadd superuser`
 
 ## add user
-`usermod -a -G wheel julianjunge`
-`usermod -a -G superuser julianjunge`
+`sudo usermod -a -G wheel julianjunge`
+`sudo usermod -a -G superuser julianjunge`
 
 ## show mount attributes
 
